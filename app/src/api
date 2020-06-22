@@ -1,0 +1,77 @@
+1.登录接口
+  http://39.100.40.204:8088/APPService.asmx?op=Login
+{"securitycode":"09E4247EFB290F801B848F85630BCF6E","data": {"ACCOUNT": "APPUSER01","PASSWORD": "123456"}}
+
+2.获得所有组织信息
+  http://39.100.40.204:8088/APPService.asmx?op=GetOrgInfo
+{"securitycode":"28EB26FA1B891B8FC0EC0BD816BE3487","data": ""}
+
+3.获得部门信息
+  http://39.100.40.204:8088/APPService.asmx?op=GetDeptInfo
+{"securitycode":"6279E624D61A22480564948874818076","data": {"ORG_ID": "a8230ecf-26ab-4553-8d6a-6917928aacbb"}}
+
+4.模具入库
+  http://39.100.40.204:8088/APPService.asmx?op=MouldIn
+{"securitycode":"EE6109702CE71529F907FE741E41F92F","data": {"ORG_ID": "ORG001","MOULD_NO": "M0001","BIN_CODE": "B0001","REMARK": "R0001","ACCOUNT": "A001"}}
+
+5.模具出库
+  http://39.100.40.204:8088/APPService.asmx?op=MouldOut
+{"securitycode":"0DE6CF6EB9D53CDCBABB711E0BE52D98","data": {"MOULD_NO": "M0001","REMARK": "R0001","ACCOUNT": "A001"}}
+
+6.在库模具信息
+  http://39.100.40.204:8088/APPService.asmx?op=GetWHMouldInfo
+{"securitycode":"865BAD0624DBC37EC698198AFCF2C387","data": {"ORG_ID": "ORG001","PART_NO": "","MOULD_NO": ""}}
+
+7.上模
+  http://39.100.40.204:8088/APPService.asmx?op=MouldOn
+{"securitycode":"37CDDE27CB6BD21941AAFF8CB7A4D3E5","data": {"MOULD_NO": "M0001","EQP_CODE": "E0001","REMARK": "R001","ACCOUNT": "A001"}}
+8.下模
+  http://39.100.40.204:8088/APPService.asmx?op=MouldOff
+{"securitycode":"37CDDE27CB6BD21941AAFF8CB7A4D3E5","data": {"MOULD_NO": "M0001","EQP_CODE": "E0001","REMARK": "R001","ACCOUNT": "A001"}}
+
+9.获得上模信息by设备
+  http://39.100.40.204:8088/APPService.asmx?op=GetMouldOnInfoByEqpCode
+{"securitycode":"9CC861A4D55271C1A5CF746555C82618","data": {"EQP_CODE": "E0001"}}
+10.报警
+  http://39.100.40.204:8088/APPService.asmx?op=Alarm
+{"securitycode":"685088F740F0A621318DBD84BFC9841A","data": {"MOULD_NO": "M0001","EQP_CODE": "E0001","PART_NO": "P0001","ERROR_DESC": "DESC001","MT_ITEM": "MI0001","EMERGENCY_DEGREE": "E0001","CHECK_BY": "E0001","ACCOUNT": "A001"}}
+11.获得报警信息
+  http://39.100.40.204:8088/APPService.asmx?op=GetAlarmInfo
+{"securitycode":"B7BE878057451A0750F97BC016DA8539","data": {"MOULD_NO": "M0001","EQP_CODE": "","ALARM_BY": "","CHECK_RESULT": "","WX_USER": ""}}
+12.报警接单
+  http://39.100.40.204:8088/APPService.asmx?op=AlarmAccept
+{"securitycode":"D5B86802016E6A51C9398F316A413317","data": {"T_MOLD_AM_LIST_ID":'31C2EE08-B0CE-4752-A612-1523D4D40EB9',"WX_USER":'李四',"ACCOUNT":"A0001"}}
+
+13.报警派工
+  http://39.100.40.204:8088/APPService.asmx?op=AlarmAssign
+{"securitycode":"E238B9A49B95FBB8C4192FDD80D144AC","data": {"T_MOLD_AM_LIST_ID":'31C2EE08-B0CE-4752-A612-1523D4D40EB9',"WX_USER":'张三',"ACCOUNT":"A0001"}}
+
+14.报警撤单 撤销派工或接收的报警单
+  http://39.100.40.204:8088/APPService.asmx?op=AlarmAssignAcceptCancel
+{"securitycode":"ACD40573742628215CE6EA70F8E7A830","data": {"T_MOLD_AM_LIST_ID":'31C2EE08-B0CE-4752-A612-1523D4D40EB9',"ACCOUNT":"A0001"}}
+
+15.维修
+  http://39.100.40.204:8088/APPService.asmx?op=Repair
+{"securitycode":"E7CAEF09E8686F39A2BD8C4E43F391E8","data": {"T_MOLD_AM_LIST_ID":'31C2EE08-B0CE-4752-A612-1523D4D40EB9',"ASSIST_USER":"协助人","WX_STRATEGY":"维修对策","NOTE":"说明","FILE_PATH":"照片路径","WX_STATUS":"维修中","ACCOUNT":"A0001"}}
+
+16.更换维修人
+  http://39.100.40.204:8088/APPService.asmx?op=RepairEmpChange
+{"securitycode":"A3833B4E2F15D5564B68B767B2780CEC","data": {"T_MOLD_AM_LIST_ID":'31C2EE08-B0CE-4752-A612-1523D4D40EB9',"WX_USER":'王五',"ACCOUNT":"A0001"}}
+
+17.保养
+  http://39.100.40.204:8088/APPService.asmx?op=RepairMaintain
+{"securitycode":"1DB719E714861413C14EC3C54E2A2B25","data": {"T_MOLD_AM_LIST_ID":'83E882CF-BCEE-4A02-9BE4-595C3B80801B',"MOULD_NO":"M0001","IS_UPDATE_COUNT":"1","ACTUAL_COUNT":"100","REMARK":"备注","ACCOUNT":"A0001"}}
+18.换件
+  http://39.100.40.204:8088/APPService.asmx?op=RepairChangeParts
+{"securitycode":"D8212141CB6898149CE78D29A8BD5ED7","data": {"T_MOLD_AM_LIST_ID":'83E882CF-BCEE-4A02-9BE4-595C3B80801B',"MOULD_NO":"M0001","M_MOULDPART_ID":"PART001","ACTUAL_COUNT":"100","REMARK":"备注","ACCOUNT":"A0001"}}
+19.报警审核
+  http://39.100.40.204:8088/APPService.asmx?op=AlarmCheck
+{"securitycode":"4C1A13D5BF35B2EDCBCD0507CDEC8B3A","data": {"T_MOLD_AM_LIST_ID":'31C2EE08-B0CE-4752-A612-1523D4D40EB9',"CHECK_RESULT": "立即维修","NEXT_WX": "","CHECK_DESC": "cd001","ACCOUNT":"A0001"}}
+
+20.获得故障描述
+  http://39.100.40.204:8088/APPService.asmx?op=GetErrDesc
+{"securitycode":"9CC861A4D55271C1A5CF746555C82618","data": {"ERROR_TYPE": "ERRORTYPE"}}
+
+21.获得维修人员信息
+  http://39.100.40.204:8088/APPService.asmx?op=GetRepairEmpInfo
+{"securitycode":"6279E624D61A22480564948874818076","data": {"ORG_ID": "a8230ecf-26ab-4553-8d6a-6917928aacbb"}}
